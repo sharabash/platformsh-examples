@@ -1,0 +1,7 @@
+mysql:
+    type: mysql
+    disk: 2048
+
+mysql2:
+    type: mysql
+    disk: 2048
