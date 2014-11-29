@@ -4,6 +4,11 @@
 # The name of this app. Must be unique within a project.
 name: php
 
+# The build-time dependencies of the app.
+dependencies:
+    php:
+        "drush/drush": "7.0.0-alpha6"
+
 # The toolstack used to build the application.
 toolstack: "php:drupal"
 
@@ -30,12 +35,18 @@ disk: 2048
 mounts:
     "/public/sites/default/files": "shared:files/files"
     "/tmp": "shared:files/tmp"
+    "/config": "shared:files/config"
     "/private": "shared:files/private"
 
 # The hooks executed at various points in the lifecycle of the application.
 hooks:
     # We run deploy hook after your application has been deployed and started.
-    deploy: "cd /app/public ; drush -y updatedb"
+    deploy: |
+      # Drupal 8 currently fails to create config directories
+      # automatically during install.
+      mkdir -p config/active config/staging
+      cd public
+      drush -y updatedb
 
 # The configuration of scheduled execution.
 crons:
