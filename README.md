@@ -1,16 +1,8 @@
+# Example of a multi-application for Platform.sh
 
-# Example configurations for Platform.sh
+This repository contains **two standalone applications**: [Drupal 7](https://github.com/platformsh/platformsh-examples/tree/drupal/7.x) and [Symfony Todo MVC](https://github.com/platformsh/platformsh-examples/tree/symfony/todo-mvc-full). 
+It's an example to show you how you can use multiple applications inside a single Git repository in [Platform.sh](https://platform.sh).
 
-This repository is a collection of various example configurations demonstrating the flexibility of `Platform.sh`.
-
-Feel free to explore our proposed branches:
-* [drupal/7.x](https://github.com/platformsh/platformsh-examples/tree/drupal/7.x)
-* [drupal/8.X](https://github.com/platformsh/platformsh-examples/tree/drupal/8.x)
-* [drupal/kickstart-2.x](https://github.com/platformsh/platformsh-examples/tree/drupal/kickstart-2.x)
-* [symfony/standard-full](https://github.com/platformsh/platformsh-examples/tree/symfony/standard-full)
-* [symfony/standard-dev-full](https://github.com/platformsh/platformsh-examples/tree/symfony/standard-dev-full)
-* [symfony/sandbox-full](https://github.com/platformsh/platformsh-examples/tree/symfony/cmf-sandbox-full)
-* [symfony/todo-mvc-full](https://github.com/platformsh/platformsh-examples/tree/symfony/todo-mvc-full)
-* [laravel/laravel](https://github.com/platformsh/platformsh-examples/tree/laravel/laravel)
-* [double-mysql](https://github.com/platformsh/platformsh-examples/tree/double-mysql)
-
+Default configuration:
+* **Routes**: You can access Drupal at http://{default} and Symfony at http://symfony.{default}. You can change it in ``/.platform/routes.yaml``.
+* **Services**: Two MySQL databases are deployed. Each application uses its own. You can change it in ``/.platform/services.yaml``.

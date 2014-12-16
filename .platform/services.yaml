@@ -1,0 +1,7 @@
+mysqldrupal:
+    type: mysql
+    disk: 1024
+
+mysqlsymfony:
+    type: mysql
+    disk: 1024
