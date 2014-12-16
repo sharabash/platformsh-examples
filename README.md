@@ -13,4 +13,5 @@ Feel free to explore our proposed branches:
 * [symfony/todo-mvc-full](https://github.com/platformsh/platformsh-examples/tree/symfony/todo-mvc-full)
 * [laravel/laravel](https://github.com/platformsh/platformsh-examples/tree/laravel/laravel)
 * [double-mysql](https://github.com/platformsh/platformsh-examples/tree/double-mysql)
+* [multiapp/drupal-symfony](https://github.com/platformsh/platformsh-examples/tree/multiapp/drupal-symfony)
 
