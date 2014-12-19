@@ -25,6 +25,5 @@ web:
 disk: 2048
 
 # The mounts that will be performed when the package is deployed.
-#mounts:
-#    "/app/cache": "shared:files/cache"
-#    "/app/logs": "shared:files/logs"
+mounts:
+    "/public/wp-content/uploads": "shared:files/uploads"
