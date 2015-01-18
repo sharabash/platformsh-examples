@@ -42,3 +42,18 @@ crons:
     drupal:
         spec: "*/20 * * * *"
         cmd: "cd public ; drush core-cron"
+
+# Enabled PHP extensions.
+runtime:
+    extensions:
+        - pdo
+        - mysql
+        - mysqli
+        - pdo_mysql
+        - sqlite3
+        - gd
+        - curl
+        - intl
+        - mcrypt
+        - zendopcache
+        - apc
