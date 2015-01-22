@@ -4,7 +4,7 @@
 This repository is a collection of various example configurations demonstrating the flexibility of `Platform.sh`.
 
 Feel free to explore our proposed branches:
-* [akaneo/standard-edition](https://github.com/platformsh/platformsh-examples/tree/akaneo/standard-edition)
+* [akaneo/standard-edition](https://github.com/platformsh/platformsh-examples/tree/akeneo/standard-edition)
 * [double-mysql](https://github.com/platformsh/platformsh-examples/tree/double-mysql)
 * [drupal/7.x](https://github.com/platformsh/platformsh-examples/tree/drupal/7.x)
 * [drupal/8.X](https://github.com/platformsh/platformsh-examples/tree/drupal/8.x)
