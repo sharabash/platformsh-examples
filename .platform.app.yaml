@@ -43,7 +43,7 @@ hooks:
     # We run build hooks before your application has been packaged.
     build: |
         cd public
-        patch < platform_override_database_default_credentials.patch
+        patch -p1 <platform_override_database_default_credentials.patch
     # We run deploy hook after your application has been deployed and started.
     deploy: |
         cd /app/public
