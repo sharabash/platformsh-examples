@@ -34,6 +34,7 @@ mounts:
     "/public/img": "shared:files/img"
     "/public/mails": "shared:files/mails"
     "/public/modules": "shared:files/modules"
+    "/public/override": "shared:files/override"
     "/public/themes/default-bootstrap": "shared:files/themes-default-bootstrap"
     "/public/translations": "shared:files/translations"
     "/public/upload": "shared:files/upload"
@@ -54,6 +55,7 @@ hooks:
         cp -r log-init/* log
         cp -r mails-init/* mails
         cp -r modules-init/* modules
+        cp -r override-init/* override
         cp -r themes/default-bootstrap-init/* themes/default-bootstrap
         cp -r translations-init/* translations
         cp -r upload-init/* upload
