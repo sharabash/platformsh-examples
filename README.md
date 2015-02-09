@@ -10,7 +10,7 @@ Each example is a specific branch that you can use as a starting point for your 
 ### Drupal
 
 * [drupal/7.x](https://github.com/platformsh/platformsh-examples/tree/drupal/7.x)
-* [drupal/8.X](https://github.com/platformsh/platformsh-examples/tree/drupal/8.x)
+* [drupal/8.x](https://github.com/platformsh/platformsh-examples/tree/drupal/8.x)
 * [drupal/kickstart-2.x](https://github.com/platformsh/platformsh-examples/tree/drupal/kickstart-2.x)
 
 ### Symfony
