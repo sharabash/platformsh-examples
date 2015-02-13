@@ -39,23 +39,13 @@ mounts:
     "/public/translations": "shared:files/translations"
     "/public/upload": "shared:files/upload"
 
-# The hooks executed at various points in the lifecycle of the application.
+
 hooks:
     # We run build hooks before your application has been packaged.
     build: |
         cd public
-        patch -p1 <platform_override_database_default_credentials.patch
+        ./prestashop-build.sh
     # We run deploy hook after your application has been deployed and started.
     deploy: |
         cd /app/public
-        cp -r cache-init/* cache
-        cp -r config-init/* config
-        cp -r download-init/* download
-        cp -r img-init/* img
-        cp -r log-init/* log
-        cp -r mails-init/* mails
-        cp -r modules-init/* modules
-        cp -r override-init/* override
-        cp -r themes/default-bootstrap-init/* themes/default-bootstrap
-        cp -r translations-init/* translations
-        cp -r upload-init/* upload
+        ./prestashop-deploy.sh
