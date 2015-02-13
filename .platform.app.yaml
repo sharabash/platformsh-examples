@@ -35,11 +35,12 @@ mounts:
     "/public/mails": "shared:files/mails"
     "/public/modules": "shared:files/modules"
     "/public/override": "shared:files/override"
-    "/public/themes/default-bootstrap": "shared:files/themes-default-bootstrap"
+    "/public/themes": "shared:files/themes"
     "/public/translations": "shared:files/translations"
     "/public/upload": "shared:files/upload"
 
-
+# The hooks executed at various points in the lifecycle of the application.
+# note that the .platform-read-write-dirs contains the directories that need to be R/W
 hooks:
     # We run build hooks before your application has been packaged.
     build: |

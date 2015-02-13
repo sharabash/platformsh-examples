@@ -4,7 +4,7 @@ readarray -t  dirs < .platform-read-write-dirs
 # loop through array(dirs)
 for dir in "${dirs[@]}"
 do
- cp -R "$dir-init/*" "$dir/"|| true
+ cp -R "../init/$dir/*" "$dir/"|| true
 done
 
 # Update the main URL of the site.
