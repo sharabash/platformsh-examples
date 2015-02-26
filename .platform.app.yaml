@@ -40,6 +40,13 @@ mounts:
 
 # The hooks executed at various points in the lifecycle of the application.
 hooks:
+    # Install Drupal Console and intiate and update composer.
+    build: |
+      cd public
+      php -r "readfile('http://drupalconsole.com/installer');" | php
+      php sites/all/modules/composer_manager/scripts/init.sh
+      cd core
+      composer drupal-update
     # We run deploy hook after your application has been deployed and started.
     deploy: |
       # Drupal 8 currently fails to create config directories
