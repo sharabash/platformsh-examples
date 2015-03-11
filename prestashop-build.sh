@@ -1,11 +1,11 @@
 #!/bin/bash
 readarray -t  dirs < .platform-read-write-dirs
 
-# Loop through array(dirs).
+# Move files away.
+# Loop through array(dirs)
+mkdir -p "../init/"
 for dir in "${dirs[@]}"
 do
- #  Temporarly rename folders.
- mv  "$dir" "$dir-init"
- #  Recreate those folders that will be mounted by Platform.sh.
+ mv  "$dir" "../init/$dir/"
  mkdir "$dir"
 done
