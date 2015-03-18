@@ -7,7 +7,7 @@ name: php
 # The build-time dependencies of the app.
 dependencies:
     php:
-        "drush/drush": "7.0.0-alpha6"
+        "drush/drush": "7.0.0-alpha9"
 
 # The toolstack used to build the application.
 toolstack: "php:drupal"
