@@ -14,7 +14,6 @@ if(!$application_home = getenv('PLATFORM_APP_DIR')) {
 }
 $settings['container_yamls'][] = $application_home . '/services.yml';
 
-$local_settings = dirname(__FILE__) . '/settings.local.php';
-if (file_exists($local_settings)) {
-  require $local_settings;
+if (file_exists(__DIR__ . '/settings.local.php')) {
+  include __DIR__ . '/settings.local.php';
 }
