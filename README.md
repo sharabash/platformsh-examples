@@ -12,6 +12,8 @@ Each example is a specific branch that you can use as a starting point for your 
 * [drupal/7.x](https://github.com/platformsh/platformsh-examples/tree/drupal/7.x)
 * [drupal/8.x](https://github.com/platformsh/platformsh-examples/tree/drupal/8.x)
 * [drupal/kickstart-2.x](https://github.com/platformsh/platformsh-examples/tree/drupal/kickstart-2.x)
+* [drupal/7.x-grunt](https://github.com/platformsh/platformsh-examples/tree/drupal/7.x-grunt)
+* [drupal/8.x-commerce](https://github.com/platformsh/platformsh-examples/tree/drupal/8.x-commerce)
 
 ### Symfony
 
@@ -27,7 +29,6 @@ Each example is a specific branch that you can use as a starting point for your 
 * [laravel/laravel](https://github.com/platformsh/platformsh-examples/tree/laravel/laravel)
 * [multiapp/drupal-symfony](https://github.com/platformsh/platformsh-examples/tree/multiapp/drupal-symfony)
 * [wordpress/4.x](https://github.com/platformsh/platformsh-examples/tree/wordpress/4.x)
-* [drupal/7.x-grunt](https://github.com/platformsh/platformsh-examples/tree/drupal/7.x-grunt)
 
 ## How to use
 
