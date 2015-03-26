@@ -27,6 +27,7 @@ Each example is a specific branch that you can use as a starting point for your 
 * [laravel/laravel](https://github.com/platformsh/platformsh-examples/tree/laravel/laravel)
 * [multiapp/drupal-symfony](https://github.com/platformsh/platformsh-examples/tree/multiapp/drupal-symfony)
 * [wordpress/4.x](https://github.com/platformsh/platformsh-examples/tree/wordpress/4.x)
+* [drupal/7.x-grunt](https://github.com/platformsh/platformsh-examples/tree/drupal/7.x-grunt)
 
 ## How to use
 
