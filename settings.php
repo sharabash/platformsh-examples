@@ -1,18 +1,19 @@
 <?php
+/**
+ * @file
+ * Platform.sh example settings.php file for Drupal 8.
+ */
 
-$config_directories = array(
-  CONFIG_ACTIVE_DIRECTORY => '/app/config/active',
-  CONFIG_STAGING_DIRECTORY => '/app/config/staging',
-);
+// Modify this to make it specific to your application.
+// $settings['hash_salt'] = '';
 
-# Modify this to make it specific to your project.
-$settings['hash_salt'] = 'zaAPBHIVJmNIRywCSMegjmt9ST3IpUFVWef3SQKl';
-
-# Adjust the order of container yamls to override settings per environment.
-if(!$application_home = getenv('PLATFORM_APP_DIR')) {
-  $application_home = '/app';
+// Override paths for config files in Platform.sh.
+if (isset($_ENV['PLATFORM_APP_DIR'])) {
+  $config_directories = array(
+    CONFIG_ACTIVE_DIRECTORY => $_ENV['PLATFORM_APP_DIR'] . '/config/active',
+    CONFIG_STAGING_DIRECTORY => $_ENV['PLATFORM_APP_DIR'] . '/config/staging',
+  );
 }
-$settings['container_yamls'][] = $application_home . '/services.yml';
 
 if (file_exists(__DIR__ . '/settings.local.php')) {
   include __DIR__ . '/settings.local.php';
