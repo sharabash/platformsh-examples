@@ -5,7 +5,7 @@
  */
 
 // You should modify the hash_salt so that it is specific to your application.
-$settings['hash_salt'] = '';
+$settings['hash_salt'] = '4946c1912834b8477cc70af309a2c30dcec24c2103c724ff30bf13b4c10efd82';
 
 /**
  * Default Drupal 8 settings.
@@ -17,7 +17,6 @@ $settings['hash_salt'] = '';
  */
 $databases = array();
 $config_directories = array();
-$settings['hash_salt'] = '';
 $settings['update_free_access'] = FALSE;
 $settings['container_yamls'][] = __DIR__ . '/services.yml';
 
