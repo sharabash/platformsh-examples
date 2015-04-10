@@ -1,48 +1,91 @@
+Sonata Standard Edition
+=======================
 
-# Example configurations for Platform.sh
+[ ![Codeship Status for sonata-project/sandbox](https://codeship.com/projects/abaa9ca0-5945-0132-9e3b-069770f0649f/status)](https://codeship.com/projects/50230)
 
-This repository is a collection of various example configurations demonstrating the flexibility of `Platform.sh`.
+What's inside?
+--------------
 
-## Examples
+Sonata Standard Edition comes pre-configured with the following bundles:
 
-Each example is a specific branch that you can use as a starting point for your [Platform.sh](https://platform.sh) project.
+* Bundles from Symfony Standard distribution
+* Sonata Admin Bundles: Admin and Doctrine ORM Admin
+* Sonata Ecommerce Bundles: Payment, Customer, Invoice, Order and Product
+* Sonata Foundation Bundles: Core, Notification, Formatter, Intl, Cache, Seo and Easy Extends
+* Sonata Feature Bundles: Page, Media, News, User, Block, Timeline
+* Api Bundles: FOSRestBundle, BazingaHateoasBundle, NelmioApiDocBundle and JMSSerializerBundle
 
-### Drupal
+Quick Installation
+------------------
 
-* [drupal/7.x](https://github.com/platformsh/platformsh-examples/tree/drupal/7.x)
-* [drupal/8.x](https://github.com/platformsh/platformsh-examples/tree/drupal/8.x)
-* [drupal/kickstart-2.x](https://github.com/platformsh/platformsh-examples/tree/drupal/kickstart-2.x)
-* [drupal/7.x-grunt](https://github.com/platformsh/platformsh-examples/tree/drupal/7.x-grunt)
-* [drupal/8.x-commerce](https://github.com/platformsh/platformsh-examples/tree/drupal/8.x-commerce)
+The Sonata Project provides a build of the Sonata Project sandbox to quickly start with the projet.
 
-### Symfony
+* Retrieve the code: ``curl -L github https://github.com/sonata-project/sandbox-build/archive/2.4.tar.gz | tar xzv``
+* Configure default the ``parameters.yml`` file: ``cp app/config/parameters.yml.dist app/config/parameters.yml``
+* load the data: ``php bin/load_data.php``
+* You should should be ready to go ...
 
-* [symfony/standard-full](https://github.com/platformsh/platformsh-examples/tree/symfony/standard-full)
-* [symfony/standard-dev-full](https://github.com/platformsh/platformsh-examples/tree/symfony/standard-dev-full)
-* [symfony/sandbox-full](https://github.com/platformsh/platformsh-examples/tree/symfony/cmf-sandbox-full)
-* [symfony/todo-mvc-full](https://github.com/platformsh/platformsh-examples/tree/symfony/todo-mvc-full)
+Composer Installation
+---------------------
 
-### Misc
+Get composer:
 
-* [akaneo/standard-edition](https://github.com/platformsh/platformsh-examples/tree/akeneo/standard-edition)
-* [double-mysql](https://github.com/platformsh/platformsh-examples/tree/double-mysql)
-* [laravel/laravel](https://github.com/platformsh/platformsh-examples/tree/laravel/laravel)
-* [multiapp/drupal-symfony](https://github.com/platformsh/platformsh-examples/tree/multiapp/drupal-symfony)
-* [wordpress/4.x](https://github.com/platformsh/platformsh-examples/tree/wordpress/4.x)
+    curl -s http://getcomposer.org/installer | php
 
-## How to use
+Run the following command for the 2.4 develop branch:
 
-Clone one of the example branch you want to start from:
+    php composer.phar create-project sonata-project/sandbox:2.4.x-dev
 
-    $ git clone --branch=BRANCH-NAME git@github.com:platformsh/platformsh-examples.git my-project
-    $ cd my-project
+The installation process used Incenteev's ParameterHandler to handle parameters.yml configuration. With the current
+installation, it is possible to use environment variables to configure this file:
 
-If you start from a new [Platform.sh](https://platform.sh) project, choose the ``start with an existing repository`` option and copy the ``remote add`` command. 
+    DATABASE_NAME=sonata DATABASE_USER=root DATABASE_PASSWORD="" php composer.phar create-project sonata-project/sandbox:dev-2.4-develop
 
-Paste this command into your newly created folder and push it to your [Platform.sh](https://platform.sh) project:
+You might experience some timeout issues with composer, as the ``create-project`` start different scripts, you can increase the default composer value with the ``COMPOSER_PROCESS_TIMEOUT`` env variable:
 
-    $ git remote add platform PROJECT-ID@git.eu.platform.sh:PROJECT-ID.git
-    $ git push -u platform HEAD:master
+    COMPOSER_PROCESS_TIMEOUT=600 php composer.phar create-project sonata-project/sandbox:dev-2.4-develop
+
+Fixtures are automatically loaded on the ``composer create-project`` step. If you'd like to reset your sandbox to the default fixtures (or you had an issue while installing and want to fill in the fixtures manually), you may run:
+
+    php bin/load_data.php
+
+This will completely reset your database.
+
+Run
+---
+
+If you are running PHP5.4, you can use the built in server to start the demo:
+
+    app/console server:run localhost:9090
+
+Now open your browser and go to http://localhost:9090/
+
+Tests
+-----
+
+### Functional testing
+
+To run the Behat tests, copy the default configuration file and adjust the base_url to your needs
+
+    # behat.yml
+    imports:
+        - behat.yml.dist
+
+    # Overwrite only the config you want to change here
+
+You can now run the tests suite using the following command
+
+    bin/qa_behat.sh
+
+To get more informations about Behat, feel free to check [the official documentation][link_behat].
 
 
-That's it!
+### Unit testing
+
+To run the Sonata test suites, you can run the command:
+
+    bin/qa_client_ci.sh
+
+Enjoy!
+
+[link_behat]: http://docs.behat.org "the official Behat documentation"
