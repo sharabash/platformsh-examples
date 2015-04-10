@@ -1,0 +1,25 @@
+# This file is auto-generated during the composer install
+parameters:
+    locale: en
+    secret: ThisTokenIsNotSoSecretChangeIt
+    database_driver: pdo_sqlite
+    database_host: null
+    database_name: null
+    database_user: null
+    database_password: null
+    mailer_transport: smtp
+    mailer_host: localhost
+    mailer_user: null
+    mailer_password: null
+    sonata_admin.title: 'Sonata Project'
+    sonata_admin.logo_title: /bundles/sonataadmin/logo_title.png
+    sonata_news.blog_title: 'My Awesome Blog'
+    sonata_news.blog_link: 'http://awesome-blog.ltd'
+    sonata_news.blog_description: 'My Awesome blog description'
+    sonata_news.salt: ThisTokenIsNotSoSecretChangeIt
+    sonata_news.comment.emails:
+        - mail@example.org
+    sonata_news.comment.email_from: no-reply@example.org
+    sonata_media.cdn.host: /uploads/media
+    sonata_user.google_authenticator.server: demo.sonata-project.org
+    sonata_page.varnish.command: ''
