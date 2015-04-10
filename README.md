@@ -29,6 +29,7 @@ Each example is a specific branch that you can use as a starting point for your 
 * [laravel/laravel](https://github.com/platformsh/platformsh-examples/tree/laravel/laravel)
 * [multiapp/drupal-symfony](https://github.com/platformsh/platformsh-examples/tree/multiapp/drupal-symfony)
 * [wordpress/4.x](https://github.com/platformsh/platformsh-examples/tree/wordpress/4.x)
+* [sonata/2.4](https://github.com/platformsh/platformsh-examples/tree/sonata/2.4)
 
 ## How to use
 
