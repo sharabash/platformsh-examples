@@ -76,7 +76,7 @@ index 8ed5754..4c9476f 100644
  function drupal_init_path() {
 -  if (!empty($_GET['q'])) {
 +  $_GET['q'] = request_path();
-+
++  $_REQUEST['q'] = $_GET['q'];
 +  if ($_GET['q'] !== "") {
      $_GET['q'] = drupal_get_normal_path(trim($_GET['q'], '/'));
    }
