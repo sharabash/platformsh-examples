@@ -1,0 +1,10 @@
+{% extends "base.twig" %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+    <h1>Hello world</h1>
+    <p>
+        Hostname: {{ app.request.host }}
+    </p>
+{% endblock %}
