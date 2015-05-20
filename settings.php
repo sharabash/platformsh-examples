@@ -1,6 +1,6 @@
 <?php
 
-$db_url = 'mysql://database.internal/main';
+$db_url = 'mysql://user@database.internal/main';
 $db_prefix = '';
 
 $local_settings = dirname(__FILE__) . '/settings.local-d6.php';
