@@ -37,7 +37,7 @@ if (isset($_ENV['PLATFORM_ROUTES'])) {
   $settings['trusted_host_patterns'] = array();
   foreach ($routes as $url => $route) {
     $host = parse_url($url, PHP_URL_HOST);
-    if ($host !== FALSE && $route['type'] == 'upstream' && $route['upstream'] == 'php') {
+    if ($host !== FALSE && $route['type'] == 'upstream' && $route['upstream'] == $_ENV['PLATFORM_APPLICATION_NAME']) {
       $settings['trusted_host_patterns'][] = '^' . preg_quote($host) . '$';
     }
   }
