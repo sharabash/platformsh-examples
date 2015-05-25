@@ -31,6 +31,19 @@ if (isset($_ENV['PLATFORM_APP_DIR'])) {
   );
 }
 
+// Set trusted hosts based on real Platform.sh routes.
+if (isset($_ENV['PLATFORM_ROUTES'])) {
+  $routes = json_decode(base64_decode($_ENV['PLATFORM_ROUTES']), TRUE);
+  $settings['trusted_host_patterns'] = array();
+  foreach ($routes as $url => $route) {
+    $host = parse_url($url, PHP_URL_HOST);
+    if ($host !== FALSE && $route['type'] == 'upstream' && $route['upstream'] == $_ENV['PLATFORM_APPLICATION_NAME']) {
+      $settings['trusted_host_patterns'][] = '^' . preg_quote($host) . '$';
+    }
+  }
+  $settings['trusted_host_patterns'] = array_unique($settings['trusted_host_patterns']);
+}
+
 // Local settings. These are required for Platform.sh.
 if (file_exists(__DIR__ . '/settings.local.php')) {
   include __DIR__ . '/settings.local.php';
