@@ -1,7 +1,3 @@
-
-# Example configurations for Platform.sh
-
-This repository is a collection of random example
-configurations demonstrating the flexibility of 
-`Platform.sh`.
+# Example configuration for Platform.sh
+## Minimal custom PHP application with Mysql  connectivity
 
