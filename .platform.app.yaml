@@ -3,6 +3,6 @@ toolstack: "php:symfony"      # We choose php:symfony for anything but Drupal
 web:
   document_root: "/"
   passthru: "/index.php"
-relationships:                # Here we say we want access to a mysql instance we call "main_db"
+relationships:                # Here we say we want access to a mysql instance we call "database"
     database: "mysql:mysql"
 disk: 2048
