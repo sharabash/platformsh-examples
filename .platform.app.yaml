@@ -17,7 +17,7 @@ relationships:
 # The configuration of app when it is exposed to the web.
 web:
     # The public directory of the app, relative to its root.
-    document_root: "/"
+    document_root: "/wp"
     # The front-controller script to send non-static requests to.
     passthru: "/index.php"
 
@@ -26,4 +26,4 @@ disk: 2048
 
 # The mounts that will be performed when the package is deployed.
 mounts:
-    "/public/wp-content/uploads": "shared:files/uploads"
+    "/wp/wp-content/uploads": "shared:files/uploads"
