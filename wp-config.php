@@ -14,7 +14,9 @@ You would put here your local configuration for example:
 */
 
 } else {
-    // This is wgere we
+    // This is where we get the relationships of our application dynamically
+    //from Platform.sh
+    
     $relationships = json_decode(base64_decode($_ENV['PLATFORM_RELATIONSHIPS']), TRUE);
   
     // We are using the first relationship called "database" found in your
@@ -34,7 +36,8 @@ You would put here your local configuration for example:
     define('WP_HOME', key($routes));
     define('WP_SITEURL', key($routes));    
 }
-// Since you can have multiple installations in one database, you need a unique prefix.
+// Since you can have multiple installations in one database, you need a unique
+// prefix.
 $table_prefix  = 'wp_';
 
 // Default PHP settings.
