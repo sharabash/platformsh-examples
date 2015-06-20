@@ -1,11 +1,13 @@
 
 # Example configurations for Platform.sh
 
-This repository is a collection of various example configurations demonstrating the flexibility of `Platform.sh`.
+This repository is a collection of various example configurations demonstrating 
+the flexibility of `Platform.sh`.
 
 ## Examples
 
-Each example is a specific branch that you can use as a starting point for your [Platform.sh](https://platform.sh) project.
+Each example is a specific branch that you can use as a starting point for your 
+[Platform.sh](https://platform.sh) project.
 
 ### Drupal
 
@@ -24,6 +26,7 @@ Each example is a specific branch that you can use as a starting point for your 
 
 ### Misc
 
+* [custom-php/minimal](https://github.com/platformsh/platformsh-examples/tree/custom-php/minimal)
 * [akaneo/standard-edition](https://github.com/platformsh/platformsh-examples/tree/akeneo/standard-edition)
 * [double-mysql](https://github.com/platformsh/platformsh-examples/tree/double-mysql)
 * [laravel/laravel](https://github.com/platformsh/platformsh-examples/tree/laravel/laravel)
@@ -38,12 +41,17 @@ Clone one of the example branch you want to start from:
     $ git clone --branch=BRANCH-NAME git@github.com:platformsh/platformsh-examples.git my-project
     $ cd my-project
 
-If you start from a new [Platform.sh](https://platform.sh) project, choose the ``start with an existing repository`` option and copy the ``remote add`` command. 
+If you start from a new [Platform.sh](https://platform.sh) project, choose the 
+`start with an existing repository` option and copy the `remote add` command. 
 
-Paste this command into your newly created folder and push it to your [Platform.sh](https://platform.sh) project:
+Paste this command into your newly created folder and push it to your 
+[Platform.sh](https://platform.sh) project:
 
     $ git remote add platform PROJECT-ID@git.eu.platform.sh:PROJECT-ID.git
     $ git push -u platform HEAD:master
 
+To work with your new application it would be simpler for you to use the CLI or
+git to clone the remote repository into another "clean" directory without all
+of the other branches.
 
 That's it!
