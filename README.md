@@ -8,8 +8,8 @@ This is th whole layout of the repository (it will still make for a perfectly fu
 ```
 .platform.app.yaml
 .platform/
-          /routes.yaml
-          /services.yaml
+         /routes.yaml
+         /services.yaml
 libraries/
          /README.txt
 modules/
