@@ -6,17 +6,17 @@ This example is based on using the Drush Make build profile. You can see there i
 
 This is th whole layout of the repository (it will still make for a perfectly functional web site on http://platform.sh !)
 ```
-.platform.app.yaml
 .platform/
          /routes.yaml
          /services.yaml
 libraries/
          /README.txt
 modules/
-       /README.txt
-project.make
+         /README.txt
 themes/
-      /README.txt
+         /README.txt
+.platform.app.yaml
+project.make
 ```
 
 in `.platform.app.yaml` we have the basic configuration of our applicaiton (we call it php), saying this is a Drupal 
