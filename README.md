@@ -2,9 +2,9 @@
 
 This is a no-thrills example of a minimal repository to deploy a Drupal 7.0 instance on Platform.sh
 
-This example is based on using the Drush Make build profile. You can see there is not much in terms of files comitted to this repository. 
+This example is based on using the Drush Make build profile. You can see there is not much in terms of files comitted to this repository. You can learn (much) more on [Platform.sh Drupal Hosting Documentation](https://docs.platform.sh/toolstacks/php/drupal)
 
-This is th whole layout of the repository (it will still make for a perfectly functional web site on http://platform.sh !)
+This is the whole layout of the repository (it will still make for a perfectly functional web site on http://platform.sh !)
 ```
 .platform/
          /routes.yaml
