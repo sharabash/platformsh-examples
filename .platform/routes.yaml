@@ -10,3 +10,7 @@
 "http://www.{default}/":
     type: redirect
     to: "http://{default}/"
+
+"http://www.{default}/wp-admin/":
+    type: redirect
+    to: "http://{default}/wp-admin/index.php"
