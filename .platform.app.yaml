@@ -19,6 +19,7 @@ web:
     # The public directory of the app, relative to its root.
     document_root: "/wp"
     # The front-controller script to send non-static requests to.
+    passthru: "index.php"
     index_files: [ "index.php" ]
 
 # The size of the persistent disk of the application (in MB).
