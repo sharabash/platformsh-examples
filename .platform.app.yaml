@@ -19,7 +19,9 @@ web:
     # The public directory of the app, relative to its root.
     document_root: "/wp"
     # The front-controller script to send non-static requests to.
-    passthru: "/index.php"
+    passthru: "index.php"
+    # Wordpress has mutliple roots (wp-admin) so the following is required
+    index_files: [ "index.php" ]
 
 # The size of the persistent disk of the application (in MB).
 disk: 2048
