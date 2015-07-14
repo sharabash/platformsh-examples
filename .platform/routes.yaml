@@ -7,18 +7,6 @@
     type: upstream
     upstream: "php:php"
 
-"https://{default}/":
-    type: upstream
-    upstream: "php:php"
-    
 "http://www.{default}/":
     type: redirect
     to: "http://{default}/"
-
-"https://www.{default}/wp-admin":
-    type: redirect
-    to: "https://{default}/wp-admin/index.php"
-
-"http://www.{default}/wp-admin":
-    type: redirect
-    to: "https://{default}/wp-admin/index.php"
