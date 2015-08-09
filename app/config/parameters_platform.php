@@ -22,9 +22,3 @@ foreach ($relationships['database'] as $endpoint) {
 
 # Hack.
 ini_set('session.save_path', '/tmp/sessions');
-
-foreach(json_decode(base64_decode($_ENV['PLATFORM_VARIABLES']) as $name => $variable)) {
-    if (substr($name, 0, $prefix_len) == 'SYMFONY:') {
-      $_ENV['SYMFONY__' . substr($name, $prefix_len)] = $value;
-    }
-}
