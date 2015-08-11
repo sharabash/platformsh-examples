@@ -12,13 +12,13 @@
     </div>
     <div><em>Image Credit: DATABASE at Postmasters, March 2009, by Michael Mandiberg, CC BY-SA 2.0</em></div>
 <?php
-include "database.php";
+  include "database.php";
 ?>
 <h5>The PHP source code of this example:</h5>
-<code>
+<pre>
 <?php
-show_source("database.php");
+  show_source("database.php");
 ?>
-</code>
+</pre>
 </body>
 </html>
