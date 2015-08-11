@@ -1,7 +1,8 @@
-name: php
+name: "doublemysql" #Here we call the application "doublemysql" but it is usually best to keep this simply to "php" unless you are running multiple applications in a single project. There will be other examples for that.
 type: php
 build:
     flavor: composer
+
 # The relationships of the application with services or other applications.
 # The left-hand side is the name of the relationship as it will be exposed
 # to the application in the PLATFORM_RELATIONSHIPS variable. The right-hand
@@ -9,8 +10,8 @@ build:
 # Mysql databases you can find their configuraiton in .platform/services.yaml
 
 relationships:
-    database1: "mysql:mysql"
-    database2: "mysql2:mysql"
+    first_database: "database1:mysql"
+    second_database: "database2:mysql"
 web:
     document_root: "/"
     passthru: "/index.php"
