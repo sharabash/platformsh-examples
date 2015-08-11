@@ -1,4 +1,3 @@
-
 # Example configurations for Platform.sh
 
 This repository is a collection of various example configurations demonstrating 
@@ -10,6 +9,7 @@ Each example is a specific branch that you can use as a starting point for your
 [Platform.sh](https://platform.sh) project.
 
 ### Drupal
+You can find _a lot_ of documentation on using Platform.sh with Drupal on http://docs.platform.sh/ a getting started guide can be found here: https://docs.platform.sh/drupal/ and a guide about how to migrate an existing Drupal site here: https://docs.platform.sh/drupal_migrate/
 
 * [drupal/7.x](https://github.com/platformsh/platformsh-examples/tree/drupal/7.x)
 * [drupal/8.x](https://github.com/platformsh/platformsh-examples/tree/drupal/8.x)
@@ -18,6 +18,8 @@ Each example is a specific branch that you can use as a starting point for your
 * [drupal/8.x-commerce](https://github.com/platformsh/platformsh-examples/tree/drupal/8.x-commerce)
 
 ### Symfony
+
+You can find a quick-start guide on using Symfony with Platform.sh here: https://docs.platform.sh/symfony/
 
 * [symfony/standard-full](https://github.com/platformsh/platformsh-examples/tree/symfony/standard-full)
 * [symfony/standard-dev-full](https://github.com/platformsh/platformsh-examples/tree/symfony/standard-dev-full)
@@ -42,12 +44,14 @@ Clone one of the example branch you want to start from:
     $ cd my-project
 
 If you start from a new [Platform.sh](https://platform.sh) project, choose the 
-`start with an existing repository` option and copy the `remote add` command. 
+`start with an existing repository` option and copy the `remote add` command. It
+will look like this:
+
+    $ git remote add platform PROJECT-ID@git.eu.platform.sh:PROJECT-ID.git
 
 Paste this command into your newly created folder and push it to your 
 [Platform.sh](https://platform.sh) project:
 
-    $ git remote add platform PROJECT-ID@git.eu.platform.sh:PROJECT-ID.git
     $ git push -u platform HEAD:master
 
 To work with your new application it would be simpler for you to use the CLI or
