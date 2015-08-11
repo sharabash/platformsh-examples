@@ -1,8 +1,13 @@
-name: php                   # The name of this app. Must be unique within a project.
-toolstack: "php:symfony"      # We choose php:symfony for anything but Drupal
+# The name of this app. Must be unique within a project.
+name: "php"
+# This is now required. Put "composer" if you don't know what to put here
+type: php
+build:
+    flavor: composer
 web:
   document_root: "/"
   passthru: "/index.php"
-relationships:                # Here we say we want access to a mysql instance we call "database"
+# Here we say we want access to a mysql instance we call "database" this one is configured in .platform/services.yaml
+relationships:
     database: "mysql:mysql"
 disk: 2048

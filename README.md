@@ -7,7 +7,8 @@ naked domain.
 
 In the very minimal `.platform/services.yaml` file we declare a single MySql
 service we call "mysql" and we allocate 2GB of disk space to it. 
-In `.platform.app.yaml` (on line 6) we will call this mysql instance "database"
+
+In `.platform.app.yaml` (on line 12) we will call this mysql instance "database"
 which is the name that will appear in the environment variable 
 "PLATFORM_RELATIONSHIPS" and that we will use in our index.php
 
