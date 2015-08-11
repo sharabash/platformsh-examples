@@ -4,12 +4,5 @@
 # to power your Platform.sh project.
 
 mysql:
-    type: mysql
+    type: mysql:5.5
     disk: 2048
-
-redis:
-    type: redis
-
-solr:
-    type: solr
-    disk: 1024
