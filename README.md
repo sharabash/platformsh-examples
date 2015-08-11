@@ -29,7 +29,6 @@ You can find a quick-start guide on using Symfony with Platform.sh here: https:/
 ### Misc
 
 * [custom-php/minimal](https://github.com/platformsh/platformsh-examples/tree/custom-php/minimal)
-* [akaneo/standard-edition](https://github.com/platformsh/platformsh-examples/tree/akeneo/standard-edition)
 * [double-mysql](https://github.com/platformsh/platformsh-examples/tree/double-mysql)
 * [laravel/laravel](https://github.com/platformsh/platformsh-examples/tree/laravel/laravel)
 * [multiapp/drupal-symfony](https://github.com/platformsh/platformsh-examples/tree/multiapp/drupal-symfony)
