@@ -5,7 +5,9 @@
 name: php
 
 # The toolstack used to build the application.
-toolstack: "php:symfony"
+type: php
+build:
+    flavor: symfony
 
 # The relationships of the application with services or other applications.
 # The left-hand side is the name of the relationship as it will be exposed
@@ -19,7 +21,7 @@ web:
     # The public directory of the app, relative to its root.
     document_root: "/web"
     # The front-controller script to send non-static requests to.
-    passthru: "/app_dev.php"
+    passthru: "/app.php"
 
 # The size of the persistent disk of the application (in MB).
 disk: 2048
@@ -32,14 +34,10 @@ mounts:
 # The hooks that will be performed when the package is deployed.
 hooks:
     build: |
-      # rm web/app_dev.php
+      rm web/app_dev.php
       app/console --env=prod assetic:dump --no-debug
     deploy: |
-      echo
-      # app/console --env=prod doctrine:phpcr:init:dbal
-      # app/console --env=prod doctrine:phpcr:workspace:create sandbox
-      # app/console --env=prod doctrine:phpcr:repository:init
-      # app/console --env=prod -v doctrine:phpcr:fixtures:load
+      app/console --env=prod cache:clear
 
 # The configuration of scheduled execution.
 # see http://symfony.com/doc/current/components/console/introduction.html
