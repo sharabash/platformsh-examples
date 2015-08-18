@@ -30,7 +30,6 @@ You can find a quick-start guide on using Symfony with Platform.sh here: https:/
 
 * [custom-php/minimal](https://github.com/platformsh/platformsh-examples/tree/custom-php/minimal)
 * [double-mysql](https://github.com/platformsh/platformsh-examples/tree/double-mysql)
-* [laravel/laravel](https://github.com/platformsh/platformsh-examples/tree/laravel/laravel)
 * [multiapp/drupal-symfony](https://github.com/platformsh/platformsh-examples/tree/multiapp/drupal-symfony)
 * [wordpress/4.x](https://github.com/platformsh/platformsh-examples/tree/wordpress/4.x)
 * [sonata/2.4](https://github.com/platformsh/platformsh-examples/tree/sonata/2.4)
