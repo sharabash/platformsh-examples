@@ -17,7 +17,7 @@
 <h5>The PHP source code of this example:</h5>
 <pre>
 <?php
-  show_source("database.php");
+  highlight_file("database.php");
 ?>
 </pre>
 </body>
