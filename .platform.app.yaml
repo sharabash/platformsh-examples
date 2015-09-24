@@ -1,8 +1,6 @@
-# The name of this app. Must be unique within a project.
-name: "php"
-# This is now required. Put "composer" if you don't know what to put here
+name: "hhvmapp" # The name of this app. Must be unique within a project.
 type: hhvm:3.9
-build:
+build: # This is now required. Put "composer" if you don't know what to put here
     flavor: composer
 web:
   document_root: "/"
