@@ -29,6 +29,7 @@ You can find a quick-start guide on using Symfony with Platform.sh here: https:/
 ### Misc
 
 * [custom-php/minimal](https://github.com/platformsh/platformsh-examples/tree/custom-php/minimal)
+* [custom-php/hhvm](https://github.com/platformsh/platformsh-examples/tree/custom-php/hhvm)
 * [double-mysql](https://github.com/platformsh/platformsh-examples/tree/double-mysql)
 * [multiapp/drupal-symfony](https://github.com/platformsh/platformsh-examples/tree/multiapp/drupal-symfony)
 * [wordpress/4.x](https://github.com/platformsh/platformsh-examples/tree/wordpress/4.x)
