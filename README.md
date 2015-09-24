@@ -1,6 +1,18 @@
 # Example configuration for Platform.sh
 
-This is a minimal custom PHP application with Mysql connectivity
+This is a minimal custom PHP application running with HHVM with Mysql 
+connectivity. As you can see it is identical to a PHP application with
+the sole difference of putting in `.platform.app.yaml` :
+
+```yaml
+type: hhvm:3.9
+````
+
+instead of : 
+
+```yaml
+type: php:5.6
+````
 
 It has a very minimal `.platform/routes.yaml` file. It will only respond on the
 naked domain.
