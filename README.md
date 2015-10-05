@@ -1,46 +1,71 @@
-# Platform.sh Drupal 8.0 Example
+# Composer template for Drupal projects
 
-> **By default** Drupal 8.0 will output an error message on the home page before the site has been installed.
+[![Build Status](https://travis-ci.org/drupal-composer/drupal-project.svg?branch=8.x)](https://travis-ci.org/drupal-composer/drupal-project)
 
-So, after pushing to Platform.sh if you visit the root of your environment you will see something like:
+This project template should provide a kickstart for managing your site
+dependencies with [Composer](https://getcomposer.org/).
 
-      The website encountered an unexpected error. Please try again later.
-      Drupal\Core\Database\DatabaseExceptionWrapper: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'main.router' 
-      doesn't exist: SELECT name, route FROM {router} WHERE pattern_outline IN ( :patterns__0 ) ORDER BY fit DESC, name ASC;
-      Array ( [:patterns__0] => / ) in Drupal\Core\Routing\RouteProvider->getRoutesByPath() (line 316 
-      of core/lib/Drupal/Core/Routing/RouteProvider.php).
+If you want to know how to use it as replacement for
+[Drush Make](https://github.com/drush-ops/drush/blob/master/docs/make.md) visit
+the [Documentation on drupal.org](https://www.drupal.org/node/2471553).
 
-You should go to `core/install.php` to finish the installation.
+## Usage
 
-This is a no-thrills example of a minimal repository to deploy a Drupal 8.0 instance on Platform.sh
+First you need to [install composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx).
 
-This example is based on using the Drush Make build profile. You can see there is not much in terms of files comitted to this repository. You can learn (much) more on [Platform.sh Drupal Hosting Documentation](https://docs.platform.sh/toolstacks/php/drupal)
+> Note: The instructions below refer to the [global composer installation](https://getcomposer.org/doc/00-intro.md#globally).
+You might need to replace `composer` with `php composer.phar` (or similar) for your setup.
 
-This is the whole layout of the repository (it will still make for a perfectly functional web site on http://platform.sh !)
+After that you can create the project:
+
 ```
-.platform/
-         /routes.yaml
-         /services.yaml
-libraries/
-         /README.txt
-modules/
-         /README.txt
-themes/
-         /README.txt
-.platform.app.yaml
-project.make
+composer create-project drupal-composer/drupal-project:8.x-dev some-dir --stability dev --no-interaction
 ```
 
-in `.platform.app.yaml` we have the basic configuration of our applicaiton (we call it php), saying this is a Drupal 
-application, that we depdend on a database called `database` and that we what to run updatedb on deployment .. and set
-up a cron.
+With `composer require ...` you can download new dependencies to your installation.
 
-In `.platform/routes.yaml` we just say that we will redirect www to the naked domain, and that the application that 
-will be serving HTTP will be the one we called `php`.
+```
+cd some-dir
+composer require drupal/devel:8.*
+```
 
-In `.platform/services.yaml` we say we want a MySQL instance, a Redis and a Solr. That would cover most basic Drupal
-needs, right?
+## What does the template do?
 
-We also give you some nice empty (and totally not required) directories, so you would know where you are supposed to put 
-your custom themes modules and libraries. "Normal", unforked contributed modules, themes and libraries should be put in 
-the `project.make` file  (which contains our base Drupal version).
+When installing the given `composer.json` some tasks are taken care of:
+
+* Drupal will be installed in the `web`-directory.
+* Autoloader is implemented to use the generated composer autoloader in `vendor/autoload.php`,
+  instead of the one provided by Drupal (`web/vendor/autoload.php`).
+* Modules (packages of type `drupal-module`) will be placed in `web/modules/contrib/`
+* Theme (packages of type `drupal-theme`) will be placed in `web/themes/contrib/`
+* Profiles (packages of type `drupal-profile`) will be placed in `web/profiles/contrib/`
+* Creates default writable versions of `settings.php` and `services.yml`.
+* Creates `sites/default/files`-directory.
+* Latest version of drush is installed locally for use at `vendor/bin/drush`.
+* Latest version of DrupalConsole is installed locally for use at `vendor/bin/console`.
+
+## Updating Drupal Core
+
+Updating Drupal core is a two-step process.
+
+1. Update the version number of `drupal/core` in `composer.json`.
+1. Run `composer update drupal/core`.
+1. Run `./scripts/drupal/update-scaffold` to update files in the `web` directory.
+   This will update `web` with whatever the latest Drupal 8 release is. Review
+   the files for any changes and restore any customizations to `.htaccess` or
+   `robots.txt`.
+1. Commit everything all together in a single commit, so `web` will remain in
+   sync with the `core` when checking out branches or running `git bisect`.
+
+## Generate composer.json from existing project
+
+With using [the "Composer Generate" drush extension](https://www.drupal.org/project/composer_generate)
+you can now generate a basic `composer.json` file from an existing project. Note
+that the generated `composer.json` might differ from this project's file.
+
+
+## FAQ
+
+### Should I commit the contrib modules I download
+
+Composer recommends **no**. They provide [argumentation against but also workrounds if a project decides to do it anyway](https://getcomposer.org/doc/faqs/should-i-commit-the-dependencies-in-my-vendor-directory.md).
