@@ -1,60 +1,19 @@
-# Example configurations for Platform.sh
+Joomla 3.4.4 Example
+====================
 
-This repository is a collection of various example configurations demonstrating 
-the flexibility of `Platform.sh`.
+After pushing this to platform.sh, if you visit the site immediately you'll get an error about missing database tables.
+We aren't using the Joomla installer interface but rather assuming we're in a post-installation state for this example,
+so just import the database dump using the platform CLI tool then refresh the page:
 
-## Examples
+    platform environment:sql < dump.sql
 
-Each example is a specific branch that you can use as a starting point for your 
-[Platform.sh](https://platform.sh) project.
 
-### Drupal
-You can find _a lot_ of documentation on using Platform.sh with Drupal on http://docs.platform.sh/ a getting started guide can be found here: https://docs.platform.sh/drupal/ and a guide about how to migrate an existing Drupal site here: https://docs.platform.sh/drupal_migrate/
+The basic ingredients here are
 
-* [drupal/7.x](https://github.com/platformsh/platformsh-examples/tree/drupal/7.x)
-* [drupal/8.x](https://github.com/platformsh/platformsh-examples/tree/drupal/8.x)
-* [drupal/kickstart-2.x](https://github.com/platformsh/platformsh-examples/tree/drupal/kickstart-2.x)
-* [drupal/7.x-grunt](https://github.com/platformsh/platformsh-examples/tree/drupal/7.x-grunt)
-* [drupal/8.x-commerce](https://github.com/platformsh/platformsh-examples/tree/drupal/8.x-commerce)
+    .platform.app.yaml
+    .platform/services.yaml
+    .platform/routes.yaml
+    configuration.php
 
-### Symfony
-
-You can find a quick-start guide on using Symfony with Platform.sh here: https://docs.platform.sh/symfony/
-
-* [symfony/standard-full](https://github.com/platformsh/platformsh-examples/tree/symfony/standard-full)
-* [symfony/standard-dev-full](https://github.com/platformsh/platformsh-examples/tree/symfony/standard-dev-full)
-* [symfony/sandbox-full](https://github.com/platformsh/platformsh-examples/tree/symfony/cmf-sandbox-full)
-* [symfony/todo-mvc-full](https://github.com/platformsh/platformsh-examples/tree/symfony/todo-mvc-full)
-
-### Misc
-
-* [custom-php/minimal](https://github.com/platformsh/platformsh-examples/tree/custom-php/minimal)
-* [custom-php/hhvm](https://github.com/platformsh/platformsh-examples/tree/custom-php/hhvm)
-* [double-mysql](https://github.com/platformsh/platformsh-examples/tree/double-mysql)
-* [multiapp/drupal-symfony](https://github.com/platformsh/platformsh-examples/tree/multiapp/drupal-symfony)
-* [wordpress/4.x](https://github.com/platformsh/platformsh-examples/tree/wordpress/4.x)
-* [sonata/2.4](https://github.com/platformsh/platformsh-examples/tree/sonata/2.4)
-
-## How to use
-
-Clone one of the example branch you want to start from:
-
-    $ git clone --branch=BRANCH-NAME git@github.com:platformsh/platformsh-examples.git my-project
-    $ cd my-project
-
-If you start from a new [Platform.sh](https://platform.sh) project, choose the 
-`start with an existing repository` option and copy the `remote add` command. It
-will look like this:
-
-    $ git remote add platform PROJECT-ID@git.eu.platform.sh:PROJECT-ID.git
-
-Paste this command into your newly created folder and push it to your 
-[Platform.sh](https://platform.sh) project:
-
-    $ git push -u platform HEAD:master
-
-To work with your new application it would be simpler for you to use the CLI or
-git to clone the remote repository into another "clean" directory without all
-of the other branches.
-
-That's it!
+The platform setup is very basic -- we just define a mysql instance in .platform/services.yaml, and define
+the relationship alias in .platform.app.yaml as well as specify basic mountpoints for cache, logs and tmp.
